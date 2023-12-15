@@ -19,7 +19,7 @@ func hello(w http.ResponseWriter, req *http.Request) {
 	// object and calling its `Get` method; it uses the
 	// `http.DefaultClient` object which has useful default
 	// settings.
-	resp, err := http.Get("http://hello:3000/hello")
+	resp, err := http.Get("http://hello:8090/hello")
 	if err != nil {
 		panic(err)
 	}
@@ -41,7 +41,7 @@ func main() {
 	// `http.HandleFunc` convenience function. It sets up
 	// the *default router* in the `net/http` package and
 	// takes a function as an argument.
-	http.HandleFunc("/hello", hello)
+	http.HandleFunc("/", hello)
 
 	// Finally, we call the `ListenAndServe` with the port
 	// and a handler. `nil` tells it to use the default
